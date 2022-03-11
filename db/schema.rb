@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_10_163840) do
+ActiveRecord::Schema.define(version: 2022_03_11_040500) do
 
   create_table "directors", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_03_10_163840) do
     t.string "bio_long"
     t.string "birth_year"
     t.string "death_year"
+    t.string "bio_source"
   end
 
   create_table "directors_docs", id: false, force: :cascade do |t|
