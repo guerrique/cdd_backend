@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_11_040500) do
+ActiveRecord::Schema.define(version: 2022_03_14_080054) do
 
   create_table "directors", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2022_03_11_040500) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "chinese_name"
+    t.string "year"
+    t.string "duration"
+    t.string "poster"
+    t.string "doc_text_short"
+    t.string "doc_text_long"
+    t.string "awards"
+    t.string "trailer_link"
+    t.string "useful_links"
   end
 
 end

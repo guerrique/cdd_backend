@@ -46,6 +46,8 @@ wang_bo = Director.create!(
   useful_links: [['Interview for Asia Society', 'https://asiasociety.org/blog/asia/interview-bo-wangs-china-concerto-turns-camera-bo-xilais-red-chongqing'],
     ['Q&A in China File', 'https://www.chinafile.com/china-concerto']]
     )
+puts 'Directors created!'
+puts 'Creating docs'
 
    # t.string "name"
    #  t.string "useful_links"
