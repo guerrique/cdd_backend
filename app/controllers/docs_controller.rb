@@ -10,7 +10,7 @@ class DocsController < ApplicationController
 
   # GET /docs/1
   def show
-    render json: @doc
+    render json: @doc, include: [:directors]
   end
 
   # POST /docs

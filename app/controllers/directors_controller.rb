@@ -10,7 +10,7 @@ class DirectorsController < ApplicationController
 
   # GET /directors/1
   def show
-    render json: @director
+    render json: @director, include: [:docs]
   end
 
   # POST /directors
