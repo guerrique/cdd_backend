@@ -10,7 +10,7 @@ class DocsController < ApplicationController
 
   # GET /docs/1
   def show
-    render json: @doc
+    render json: @doc, include: { directors: { only: [:name, :id] } }
   end
 
   # POST /docs
@@ -27,7 +27,8 @@ class DocsController < ApplicationController
   # PATCH/PUT /docs/1
   def update
     if @doc.update(doc_params)
-      render json: @doc
+      # render json: @doc
+      render json: @doc, include: { directors: { only: [:name, :id] } }
     else
       render json: @doc.errors, status: :unprocessable_entity
     end
