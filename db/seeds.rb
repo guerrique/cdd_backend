@@ -14,8 +14,8 @@ puts 'creating Directors'
 ai_xiao_ming = Director.create!(
   name: '艾晓明 Ai Xiaoming',
   bio_short: "Ai Xiaoming is a Chinese documentary filmmaker and political activist.
-  She is also a scholar of women's and public issues, and former professor at Sun Yat-sen University.
-  Ai was born in Wuhan in 1953,and has spent most of her adult life in Beijing and Guangzhou.
+  She is also a scholar of women's and public issues, and former professor at Sun Yat-sen University.",
+  bio_long:"Ai was born in Wuhan in 1953,and has spent most of her adult life in Beijing and Guangzhou.
   Ai Xiaoming and Guo Jianmei won the 2010 Simone de Beauvoir Prize for Women's Freedom.
   Since 2004, she has made more than two dozen films, including documentaries about citizen activism,
   social problems, and corruption. Some of her films aim to uncover whitewashed historical events.",
