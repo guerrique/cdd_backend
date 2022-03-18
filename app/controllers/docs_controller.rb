@@ -10,8 +10,10 @@ class DocsController < ApplicationController
 
   # GET /docs/1
   def show
+    # see comments on directors_controller.rb
     # render json: @doc, include: { directors: { only: [:name, :id] } }
-    render json: @doc
+    # render json: @doc
+    render json: @doc, include: ['directors'], fields: { directors: [:name, :id], doc: [:id, :name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :doc_text_source, :awards, :trailer_link, :useful_links] }
   end
 
   # POST /docs

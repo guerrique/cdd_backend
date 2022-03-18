@@ -10,8 +10,14 @@ class DirectorsController < ApplicationController
 
   # GET /directors/1
   def show
+    # works if not using active_model_serializers
     # render json: @director, include: { docs: { only: [:name, :id, :year] } }
-    render json: @director
+
+    # works if using active_model_serializers and conforming to JSON API specs
+    # render json: @director
+
+    # works coz that's just what I need to display
+    render json: @director, include: ['docs'], fields: {docs: [:name, :id, :year], director: [:name, :id, :useful_links, :photo, :bio_short, :bio_long, :bio_source]}
   end
 
   # POST /directors
