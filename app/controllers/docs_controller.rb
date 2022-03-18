@@ -10,7 +10,8 @@ class DocsController < ApplicationController
 
   # GET /docs/1
   def show
-    render json: @doc, include: { directors: { only: [:name, :id] } }
+    # render json: @doc, include: { directors: { only: [:name, :id] } }
+    render json: @doc
   end
 
   # POST /docs
