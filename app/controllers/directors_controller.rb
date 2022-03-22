@@ -5,7 +5,8 @@ class DirectorsController < ApplicationController
   def index
     @directors = Director.all
 
-    render json: @directors
+    # render json: @directors
+    render json: @directors, fields: {directors: [:name, :id] }
   end
 
   # GET /directors/1
