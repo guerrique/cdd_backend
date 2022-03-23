@@ -59,7 +59,34 @@ hu_jie = Director.create!(
   ['Interview for the New York Review', 'https://www.nybooks.com/daily/2015/05/27/chinas-invisible-history-hu-jie/'],
   ['Article on the New York Times', 'https://www.nytimes.com/2020/06/28/movies/hu-jie-films.html']]
   )
+chen_wei_jun = Director.create!(
+  name: '陈为军 Chen Weijun',
+  bio_short: 'Chen Weijun is a Chinese documentary director, cinematographer, screenwriter and producer,
+  now working for the Wuhan TV Station.',
+  bio_long: 'He started his career in film industry in 1994, known for his first documentary film To Live is Better
+  Than to Die (2003), which won the Peabody Awards in 2003 and nominated for the World Documentary at the 2003
+  Sundance Film Festival, Please Vote for Me (2007) was selected into Oscar documentary feature shortlist,
+  it was purchased by over 100 TV Stations, including BBC and PBS. His recent work This is Life (2017)
+  receives domestic attention. His films mainly focus on documentary realism, which reflects introspection of social reality.',
+  bio_source: 'Wikipedia',
+  birth_year: '1969'
+  )
+chen_yu_zhou = Director.create!(
+  name: '陈宇舟 Chen Yuzhou'
+  )
+cong_feng = Director.create!(
+  name: '丛峰 Cong Feng',
+  birth_year: '1972'
+  )
+cui_yi = Director.create!(
+  name: '催谊 Cui Yi'
+  )
+du_hai_bin = Director.create!(
+  name: '杜海滨 Du Haibin'
+  )
 puts 'Directors created!'
+
+
 
 
 
@@ -183,7 +210,7 @@ though_i_am_gone = Doc.create!(
   useful_links: [['On Docuseek', 'https://docuseek2.com/df-gone'],
   ['On Icarus Films', 'https://icarusfilms.com/df-gone']]
   )
-
+puts 'Docs created!'
 
     #   t.string "name"
     # t.string "chinese_name"
