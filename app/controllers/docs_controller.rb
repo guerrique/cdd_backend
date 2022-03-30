@@ -50,6 +50,6 @@ class DocsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def doc_params
-      params.fetch(:doc, {})
+      params.fetch(:doc, {}).permit(:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, {:awards => []}, {:useful_links => []})
     end
 end
