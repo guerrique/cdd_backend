@@ -1,5 +1,6 @@
 class DocsController < ApplicationController
   before_action :set_doc, only: [:show, :update, :destroy]
+  wrap_parameters :doc, include: [:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, :awards, :useful_links, :director_ids]
 
   # GET /docs
   def index
@@ -50,6 +51,6 @@ class DocsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def doc_params
-      params.fetch(:doc, {}).permit(:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, {:awards => []}, {:useful_links => []})
+      params.fetch(:doc, {}).permit(:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, {:awards => []}, {:useful_links => []},  {:director_ids => []})
     end
 end
