@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_111429) do
+ActiveRecord::Schema.define(version: 2022_04_03_081816) do
 
   create_table "directors", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2022_03_14_111429) do
     t.string "trailer_link"
     t.string "useful_links"
     t.string "doc_text_source"
+  end
+
+  create_table "search_entries", force: :cascade do |t|
+    t.string "title"
+    t.string "searchable_type"
+    t.integer "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_search_entries_on_searchable_type_and_searchable_id"
   end
 
 end
