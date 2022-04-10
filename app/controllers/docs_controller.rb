@@ -4,7 +4,19 @@ class DocsController < ApplicationController
 
   # GET /docs
   def index
-    @docs = Doc.all
+
+    # if params[:query].present?
+    if params[:search].present?
+
+      # sql_query = " \
+      # docs.title ILIKE :query \
+      # "
+
+      # @docs = Doc.where(sql_query, query: "%#{params[:query]}%")
+      @docs = Doc.search(params[:search])
+    else
+      @docs = Doc.all
+    end
 
     render json: @docs
   end
@@ -51,6 +63,6 @@ class DocsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def doc_params
-      params.fetch(:doc, {}).permit(:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, {:awards => []}, {:useful_links => []},  {:director_ids => []})
+      params.fetch(:doc, {}).permit(:name, :chinese_name, :year, :duration, :poster, :doc_text_short, :doc_text_long, :trailer_link, :doc_text_source, {:awards => []}, {:useful_links => []},  {:director_ids => []}, :search)
     end
 end
