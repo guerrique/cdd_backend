@@ -3,4 +3,13 @@ class Director < ApplicationRecord
   validates :name, :uniqueness => true
   has_and_belongs_to_many :docs
   serialize :useful_links, Array
+
+  def self.search(search)
+    if search
+      # self.where(name: search)
+      self.where("name LIKE ?", "%" + search + "%")
+    else
+      Director.all
+    end
+  end
 end

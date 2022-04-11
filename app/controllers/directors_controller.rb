@@ -3,7 +3,17 @@ class DirectorsController < ApplicationController
 
   # GET /directors
   def index
-    @directors = Director.all
+    if params[:search].present?
+
+      # sql_query = " \
+      # directors.title ILIKE :query \
+      # "
+
+      # @directors = Doc.where(sql_query, query: "%#{params[:query]}%")
+      @directors = Director.search(params[:search])
+    else
+      @directors = Director.all
+    end
 
     # render json: @directors
     render json: @directors, fields: {directors: [:name, :id] }
@@ -55,6 +65,6 @@ class DirectorsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def director_params
 
-      params.fetch(:director, {}).permit(:name, :birth_year, :death_year, :bio_short, :bio_long, :bio_source, :photo, {:useful_links => []})
+      params.fetch(:director, {}).permit(:name, :birth_year, :death_year, :bio_short, :bio_long, :bio_source, :photo, {:useful_links => []}, :search)
     end
 end
